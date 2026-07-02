@@ -20,5 +20,6 @@
     font-size: $fz;
     line-height: lh-number($fz, $lh);
     letter-spacing: -.3px;
+    text-transform: uppercase;
   }
 }

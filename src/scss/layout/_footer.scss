@@ -1,0 +1,73 @@
+@use "sass:selector";
+@use "../utils" as *;
+
+.footer {
+  //padd top 77, bottom - 48
+  @include set-prop-value-different-bp(
+    padding-top,
+    (20px, 30px, 40px, 50px, 60px, 77px)
+  );
+  @include set-prop-value-different-bp(
+    padding-bottom,
+    (30px, 40px, 48px),
+    (
+      xs: 0,
+      md: 767px,
+      lg: 991px,
+    )
+  );
+
+  &__inner {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+
+  &__menu {
+    padding-bottom: 25px;
+    border-bottom: var(--border-main);
+    column-gap: 15px;
+    @include up(md) {
+      column-gap: 25px;
+    }
+
+    @include up(xl) {
+      column-gap: 35px;
+    }
+  }
+
+  @at-root #{selector.nest(selector.append(&, "__menu"), ".menu__link")} {
+    font-size: 11px;
+    line-height: lh-number(15px, 26px);
+    letter-spacing: -0.3px;
+
+    @include up(md) {
+      font-size: 15px;
+    }
+  }
+
+  &__social {
+    $social-icons: (
+      facebook: "../../images/icons/fb.svg",
+      instagram: "../../images/icons/insta.svg",
+      twitter: "../../images/icons/x.svg",
+      be: "../../images/icons/be.svg",
+      in: "../../images/icons/in.svg",
+    );
+    &-list {
+      padding-top: 25px;
+      display: flex;
+      align-items: center;
+      column-gap: 30px;
+    }
+    &-item {
+      @each $name, $url in $social-icons {
+        @include unify-parent(".#{$name}") {
+          &::after {
+            content: url(#{$url}) / "social icon in footer";
+          }
+        }
+      }
+    }
+  }
+}
