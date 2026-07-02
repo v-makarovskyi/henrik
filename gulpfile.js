@@ -24,7 +24,8 @@ import autoprefixer from "gulp-autoprefixer";
 import cleanCss from "gulp-clean-css";
 
 /**images */
-import imagemin, {mozjpeg, optipng, svgo} from "gulp-imagemin"
+import imagemin, { optipng, svgo} from "gulp-imagemin"
+import imageminMozjpeg from 'imagemin-mozjpeg';
 
 const sass = gulpSass(dartSass);
 const server = browserSyncLyb.create("henrik-website");
@@ -128,7 +129,7 @@ export function images() {
       gulpIf(
         isProd,
         imagemin([
-          mozjpeg({ quality: 60, progressive: true }),
+          imageminMozjpeg({ quality: 60, progressive: true }),
           optipng({
             optimizationLevel: 5,
           }),

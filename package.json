@@ -42,6 +42,7 @@
     "gulp-sass": "^6.0.1",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-terser": "^2.1.0",
+    "imagemin-mozjpeg": "^10.0.0",
     "sass": "^1.100.0",
     "sassdoc": "^2.7.4"
   },
@@ -49,7 +50,8 @@
     "production": [
       ">0.2%",
       "not dead",
-      "not op_mini all"
+      "not op_mini all",
+      "last 2 versions"
     ],
     "development": [
       "last 1 chrome version",
