@@ -24,21 +24,17 @@
     font-weight: 500;
     text-transform: uppercase;
 
-    @include up(md) {
-      font-size: 14px;
-    }
-
-    @include up(lg) {
-      font-size: 16px;
-    }
-
-    @include up(xl) {
-      font-size: 20px;
-    }
-
-    @include up(xxl) {
-      font-size: 24px;
-    }
+    @include set-prop-value-different-bp(
+      font-size,
+      (12px, 14px, 16px, 20px, 24px),
+      (
+        xs: 0,
+        md: 767px,
+        lg: 991px,
+        xl: 1199px,
+        xxl: 1399px,
+      )
+    );
 
     border: {
       bottom: var(--border-main);
@@ -58,5 +54,19 @@
       font-size: 37px;
     }
     line-height: lh-number(37, 44.99);
+  }
+
+  @at-root #{selector.nest(selector.append(&, "--small"), ".card__title")} {
+    line-height: lh-number(19px, 25px);
+    @include set-prop-value-different-bp(
+      font-size,
+      (12px, 14px, 16px, 19px),
+      (
+        xs: 0,
+        md: 767px,
+        lg: 991px,
+        xl: 1399px,
+      )
+    );
   }
 }

@@ -1,0 +1,73 @@
+@use "sass:selector";
+@use "sass:math";
+@use "../utils" as *;
+
+.stuff {
+  //padding: top - 145  bottom - 100
+  @include set-prop-value-different-bp(
+    padding-top,
+    (45px, 55px, 65px, 85px, 110px, 145px)
+  );
+  @include set-prop-value-different-bp(
+    padding-bottom,
+    (30px, 40px, 50px, 65px, 80px, 100px)
+  );
+
+  &__header {
+    @extend %section-header;
+    @include set-prop-value-different-bp(
+      margin-bottom,
+      (10px, 18px, 24px, 37px),
+      (
+        xs: 0,
+        sm: 576px,
+        md: 991px,
+        lg: 1199px,
+      )
+    );
+  }
+
+  &__cards {
+    @include set-prop-value-different-bp(
+      margin-bottom,
+      (40px, 55px, 65px, 85px, 110px, 124px)
+    );
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(222px, 1fr));
+    row-gap: 18px;
+    place-items: center;
+  }
+
+  @at-root #{selector.nest(selector.append(&, "__card"), "img")} {
+    width: 100%;
+  }
+
+  &__slogan {
+    padding-left: max(
+        var(--container-px, calc((100vw - var(--container-width)) / 2))
+      );
+      writing-mode: horizontal-tb;
+      overflow-x: hidden;
+      font-size: clamp(25px, #{calc(math.div(100px, 1920px) * 100)}vw, 100px);
+      border: {
+        block: var(--border-main);
+      }
+  
+    
+    @include set-prop-value-different-bp(
+      padding-block,
+      (15px, 25px, 32px),
+      (
+        xs: 0,
+        md: 767px,
+        lg: 991px,
+      )
+    );
+
+   
+    & > p {
+      width: max-content;
+      letter-spacing: -.36px;
+    }
+  }
+}
