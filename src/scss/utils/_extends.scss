@@ -1,0 +1,67 @@
+@use "./mixins" as *;
+@use "./breakpoints" as *;
+
+%title-shape-before-after-common {
+  content: "";
+  display: inline-block;
+  position: relative;
+  right: 0px;
+  top: 0%;
+  background: {
+    color: transparent;
+    repeat: no-repeat;
+    size: 50%;
+    position: center;
+  }
+
+  @include up(sm) {
+    background: {
+      size: 90%;
+    }
+  }
+}
+
+%menu-item-isActive {
+  &::after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    scale: 0;
+    background: {
+      color: hsl(0 100% 50%);
+    }
+    @include transition-data($property: scale, $duration: 0.3s);
+  }
+
+  &:hover::after {
+    scale: 1;
+  }
+}
+
+%meta-data-after {
+  &::after {
+    content: "";
+    margin: {
+      left: 6px;
+      right: 6px;
+    }
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    height: 9px;
+    width: 1px;
+    background: {
+      color: var(--color-text-main);
+    }
+    rotate: 18deg;
+  }
+}
+
+%flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

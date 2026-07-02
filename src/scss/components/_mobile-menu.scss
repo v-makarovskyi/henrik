@@ -1,0 +1,53 @@
+@use "sass:selector";
+@use "../utils" as *;
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 320px;
+  height: 100vh;
+  background: {
+    color: var(--color-text-accent);
+  }
+  color: var(--color-bg-main, #ffffff);
+  font-size: 24px;
+  @include transition-data($property: right, $duration: 0.4s);
+  z-index: 9;
+
+
+  @include unify-parent(#{selector.append(&, "--isActive")}) {
+    right: 0;
+  }
+
+  &__inner {
+    height: 100%;
+    padding: 17vh 30px 50px;
+  }
+
+  &__list {
+    width: min-content;
+    margin: {
+      block: 0;
+      inline: auto;
+    }
+  }
+
+  &__item {
+    position: relative;
+    width: min-content;
+    @extend %menu-item-isActive;
+
+    &:not(:last-child) {
+      margin: {
+        bottom: 28px;
+      }
+    }
+  }
+
+  &__link {
+    padding: {
+      block: 15px;
+    }
+  }
+}

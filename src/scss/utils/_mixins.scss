@@ -1,0 +1,80 @@
+@use "sass:selector";
+@use "sass:list";
+@use "sass:map";
+@use "./breakpoints" as *;
+
+/// Mixin to quickly declare custom fonts
+/// @param {String} $name - The font-family name
+/// @param {String} $path - Relative path to the font file (without extension)
+/// @param {Number|String} $weight [normal] - Font weight (e.g., 400, bold)
+/// @param {String} $style [normal] - Font style (e.g., italic)
+/// @param {String} $display [swap]
+@mixin create-font($name, $path, $weight: 500, $style: normal, $display: swap) {
+  @font-face {
+    font: {
+      family: #{$name};
+      style: $style;
+      weight: $weight;
+      display: $display;
+    }
+    src: url(#{$path}.woff2) format("woff2");
+  }
+}
+
+/// Mixin for using hover in media-query;
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+  @media (hover: none) {
+    &:active {
+      @content;
+    }
+  }
+}
+
+@mixin unify-parent($child) {
+  @at-root #{selector.unify(&, $child)} {
+    @content;
+  }
+}
+
+@mixin transition-data(
+  $property: all,
+  $duration: 0.3s,
+  $func: ease-in,
+  $delay: 0s
+) {
+  transition: {
+    property: $property;
+    duration: $duration;
+    timing-function: $func;
+    delay: $delay;
+  }
+}
+
+
+@mixin set-prop-value-different-bp(
+  $property: null,
+  $list-values: null,
+  $breakpoints: $bp-grid
+) {
+  @if not $property {
+    @error "Css-свойство не указано. Это нужно сделать!";
+  }
+
+  @if not $list-values {
+    @error "Все бы неплохо, но список свойств для применения на разных точках останова не указан";
+  }
+
+  $bp-names: map.keys($breakpoints);
+
+  @for $i from 1 through list.length($list-values) {
+    $bp-name: list.nth($bp-names, $i);
+    @include up($bp-name, $breakpoints) {
+      #{$property}: list.nth($list-values, $i);
+    }
+  }
+}

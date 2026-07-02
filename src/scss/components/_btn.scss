@@ -1,0 +1,14 @@
+.btn {
+  padding: {
+    block: 8px;
+    inline: 16px;
+  }
+  appearance: none;
+  border: none;
+  border-radius: 5px;
+  color: hsl(0 0% 100%);
+  background: {
+    color: hsl(0 0% 70%);
+  }
+  font-size: 1rem;
+}

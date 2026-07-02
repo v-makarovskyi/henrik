@@ -1,0 +1,42 @@
+@use "../utils" as *;
+
+.header {
+    &__inner {
+        padding: {
+            block: 16px;
+        };
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include up(sm) {
+            padding: {
+                block: 24px;
+            };
+        }
+
+        @include up(md) {
+            padding: {
+                block: 35px;
+            };
+        }
+    }
+
+    &__nav {
+        display: none;
+        @include up(md) {
+            display: block;
+        }
+    }
+
+
+
+    &__title {
+        &--end {
+            display: none;
+            @include up(md) {
+                display: flex;
+            }
+        }
+    }
+}

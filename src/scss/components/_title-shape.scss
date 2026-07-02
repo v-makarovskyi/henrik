@@ -1,0 +1,58 @@
+@use "sass:selector";
+@use "../utils" as *;
+
+$data_for_shape: (
+  "circle": "../../images/icons/circle.svg",
+  "triangle": "../../images/icons/triangle.svg",
+  "star": "../../images/icons/star.svg",
+  "polygon": "../../images/icons/polygon.svg",
+);
+
+.title-shape {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  column-gap: 3px;
+  text-transform: uppercase;
+  letter-spacing: -0.36px;
+
+  @include up(sm) {
+    font-size: 1.2rem;
+    column-gap: 5px;
+  }
+
+  @include up(md) {
+    column-gap: 7px;
+  }
+
+  @at-root #{selector.append(&, "__right")} {
+    @each $shape_name, $shape_url in $data_for_shape {
+      @include unify-parent(".title-shape--#{$shape-name}") {
+        &::after {
+          @extend %title-shape-before-after-common;
+          width: 28px;
+          aspect-ratio: 1;
+          background: {
+            image: url(#{$shape_url});
+          }
+        }
+      }
+    }
+  }
+
+  @at-root #{selector.append(&, "__left")} {
+    @each $shape-name, $shape_url in $data_for_shape {
+      @include unify-parent(".title-shape--#{$shape-name}") {
+        &::before {
+          @extend %title-shape-before-after-common;
+          width: 26px;
+          height: 29px;
+          background: {
+            image: url(#{$shape_url});
+          }
+        }
+      }
+    }
+  }
+}

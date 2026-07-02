@@ -1,0 +1,29 @@
+@use "sass:selector";
+@use "../utils" as *;
+
+.meta-data {
+
+  padding: {
+    top: 4px;
+    bottom: 7px;
+  }
+  font-size: 8px;
+  line-height: lh-number(11px, 11px);
+  text-transform: uppercase;
+
+  @include up(sm) {
+    font-size: 11px;
+  }
+
+  & > *:not(:last-child) {
+    @extend %meta-data-after;
+  }
+
+  @at-root #{selector.append(&, "__date, __username")} {
+    letter-spacing: 1.1px;
+  }
+
+  &__date {
+    display: inline-block;
+  }
+}

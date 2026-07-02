@@ -1,0 +1,40 @@
+@use "sass:selector";
+@use "../utils" as *;
+
+.select-wrapper {
+  /*  padding: {
+    right: 10px;
+  } */
+  width: 175px;
+  position: relative;
+  border: {
+    bottom: var(--border-main);
+  }
+
+  @include hover {
+    box-shadow: 0px 8px 7px -2px hsl(0, 0%, 60%);
+  }
+
+  @at-root #{selector.nest(".select-wrapper", "select")} {
+    padding: {
+      left: 10px;
+    }
+    appearance: none;
+    width: calc(100% - 84px);
+    height: 23px;
+    border: none;
+    background: {
+      color: transparent;
+    }
+  }
+
+  @at-root #{selector.nest(".select-wrapper", "&__arrow")} {
+    z-index: -9999;
+    position: absolute;
+    right: 5px;
+    bottom: 6px;
+    border: 8px solid;
+    border-right: 0;
+    border-color: transparent transparent black transparent;
+  }
+}

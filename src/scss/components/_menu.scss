@@ -1,0 +1,24 @@
+@use "sass:math";
+@use "../utils" as *;
+
+.menu {
+  $column-gap-menu: 35px;
+  $fz: 15px;
+  $lh: 26px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: $column-gap-menu;
+
+  &__item {
+    position: relative;
+    @extend %menu-item-isActive;
+  }
+
+  &__link {
+    font-size: $fz;
+    line-height: lh-number($fz, $lh);
+    letter-spacing: -.3px;
+  }
+}

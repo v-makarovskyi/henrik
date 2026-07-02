@@ -1,0 +1,30 @@
+@use "../utils" as *;
+
+.view-all-btn {
+  padding: {
+    block: 10px;
+    inline: 14px;
+  }
+  background: {
+    color: transparent;
+  }
+  color: var(--color-text-main);
+  text-transform: uppercase;
+  letter-spacing: -0.36px;
+  text-decoration: {
+    style: solid;
+    color: var(--color-text-main);
+    line: underline;
+    thickness: 2px;
+  }
+
+  @include transition-data(color);
+
+  @include hover {
+    color: hsl(0 0% 25%);
+  }
+
+  @include up(sm) {
+    font-size: 1.2rem;
+  }
+}

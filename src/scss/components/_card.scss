@@ -1,0 +1,62 @@
+@use "sass:selector";
+@use "../utils" as *;
+
+.card {
+  &__img {
+    &-container {
+      margin-bottom: 14px;
+      @include up(sm) {
+        margin-bottom: 18px;
+      }
+    }
+  }
+
+  &__meta {
+    &-data {
+      margin-bottom: 2px;
+    }
+  }
+
+  &__title {
+    display: inline-block;
+    font-size: 12px;
+    line-height: lh-number(24, 32);
+    font-weight: 500;
+    text-transform: uppercase;
+
+    @include up(md) {
+      font-size: 14px;
+    }
+
+    @include up(lg) {
+      font-size: 16px;
+    }
+
+    @include up(xl) {
+      font-size: 20px;
+    }
+
+    @include up(xxl) {
+      font-size: 24px;
+    }
+
+    border: {
+      bottom: var(--border-main);
+    }
+  }
+
+  @at-root #{selector.nest(selector.append(&, "--big"), ".card__title")} {
+    //37
+    font-size: 16px;
+    @include up(sm) {
+      font-size: 20px;
+    }
+    @include up(md) {
+      font-size: 24px;
+    }
+    @include up(lg) {
+      font-size: 37px;
+    }
+    line-height: lh-number(37, 44.99);
+  }
+}

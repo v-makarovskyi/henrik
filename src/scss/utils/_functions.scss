@@ -1,0 +1,6 @@
+@use "sass:math";
+
+@function lh-number($fz-num, $lh-num) {
+  $raw-lh: math.div($lh-num, $fz-num);
+  @return math.div(math.round($raw-lh * 100), 100);
+}

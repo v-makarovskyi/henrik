@@ -1,0 +1,63 @@
+@use "../utils" as *;
+
+.interview {
+  height: var(--interview-height);
+  background: {
+    color: hsl(0 0% 0% / 0.15);
+  }
+
+  @include set-prop-value-different-bp(
+    padding,
+    (
+      18px 15px 18px 30px,
+      25px 15px 25px 44px,
+      35px 15px 35px 54px,
+      47px 15px 47px 64px
+    )
+  );
+
+  @include set-prop-value-different-bp(
+    --interview-height,
+    (205px, 230px, 350px, 430px, 530px, 615px)
+  );
+
+  @include up(md) {
+    background: {
+      image: url("../../images/sections/interview/interview-bg.jpg");
+      repeat: no-repeat;
+      size: cover;
+      position: center 70%;
+    }
+  }
+
+  &__wrapper {
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: start;
+  }
+
+  &__title {
+    max-width: 308px;
+    padding-bottom: 2px;
+    border-bottom: var(--border-main);
+
+    @include set-prop-value-different-bp(
+      max-width,
+      (310px, 382px, 495px, 600px, 380px, 517px)
+    );
+  }
+
+  &__description {
+    max-width: 85%;
+    margin-top: auto;
+
+    @include up(md) {
+      max-width: 40%;
+    }
+
+    @include up(xxl) {
+      max-width: 605px;
+    }
+  }
+}

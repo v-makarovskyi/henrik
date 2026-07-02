@@ -1,0 +1,10 @@
+@use "./mixins" as *;
+
+$font-main: Inter, sans-serif;
+
+@include create-font(
+  "Inter",
+  "../../fonts/Inter_18pt-Regular",
+  $weight: normal
+);
+@include create-font("Inter", "../../fonts/Inter_18pt-Medium");

@@ -1,0 +1,69 @@
+@use "../utils" as *;
+
+.gamburger-btn {
+  box-sizing: content-box;
+  position: relative;
+  padding: {
+    block: 8px;
+    inline: 8px;
+  }
+  width: 21px;
+  height: 21px;
+
+  //или можно указать для & > span {display: block}, тогда
+  //не нужно указывать font-size: 0
+  font-size: 0;
+
+  background: {
+    color: transparent;
+  }
+
+  z-index: 99;
+
+  @include up(md) {
+    display: none;
+  }
+
+  & > span {
+    margin-bottom: 5px;
+    display: inline-block;
+    width: 21px;
+    height: 3px;
+    background: {
+      color: var(--color-text-main);
+    }
+    rotate: 0deg;
+
+    &:nth-of-type(2n + 1) {
+      @include transition-data(
+        $property: rotate,
+        $duration: 0.3s,
+        $func: ease-in-out
+      );
+    }
+  }
+
+  @include unify-parent(".gamburger-btn--isActive") {
+    & > span {
+      margin: {
+        bottom: 0;
+      }
+      &:nth-of-type(1) {
+        position: absolute;
+        top: 44%;
+        left: 23%;
+        rotate: 45deg;
+      }
+      &:nth-of-type(2) {
+        visibility: hidden;
+      }
+
+      &:nth-of-type(3) {
+        position: absolute;
+        bottom: 46%;
+        right: 20%;
+        rotate: -42deg;
+      }
+    }
+  }
+}

@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/main.min.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="mobile-menu">
+      <div class="mobile-menu__inner">
+        <nav class="mobile-menu__nav" aria-label="Навигация для мобильного">
+          <ul class="mobile-menu__list">
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__link" href="/">Home</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__link" href="/">Pages</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__link" href="/">Shop</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__link" href="/">Blog</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__link" href="/">Video</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__link" href="/">New</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <header class="header">
+      <div class="container">
+        <div class="header__inner">
+          <div
+            class="title-shape title-shape__left title-shape--polygon header__title header__title--start"
+          >
+            Henrik
+          </div>
+          <nav class="header__nav" aria-label="Навигация для больших экранов">
+            <ul class="header__menu menu">
+              <li class="menu__item">
+                <a href="/" class="menu__link">Home</a>
+              </li>
+              <li class="menu__item">
+                <a href="/" class="menu__link">Pages</a>
+              </li>
+              <li class="menu__item">
+                <a href="/" class="menu__link">Shop</a>
+              </li>
+              <li class="menu__item">
+                <a href="/" class="menu__link">Blog</a>
+              </li>
+              <li class="menu__item">
+                <a href="/" class="menu__link">Video</a>
+              </li>
+              <li class="menu__item">
+                <a href="/" class="menu__link">New</a>
+              </li>
+            </ul>
+          </nav>
+          <button class="btn gamburger-btn header__gamburger-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <div
+            class="title-shape title-shape__right title-shape--circle header__title header__title--end"
+          >
+            Info
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="featured">
+        <div class="container">
+          <div class="featured__wrapper">
+            <div class="featured__content">
+              <div class="meta-data featured__meta-data">
+                <p class="meta-data__date">
+                  <time datetime="2006-08-21">21 aug, 2026</time>
+                </p>
+                <span class="meta-data__username">By Jenny Jensen</span>
+                <ul class="tags meta-data__tags">
+                  <li class="tags__item">
+                    <a
+                      class="tags__link"
+                      href="https://github.com/v-makarovskyi"
+                      target="_blank"
+                      >Art</a
+                    >
+                  </li>
+                  <li class="tags__item">
+                    <a
+                      class="tags__link"
+                      href="https://github.com/v-makarovskyi"
+                      target="_blank"
+                      >Painting</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <h2 class="section-title featured__title">
+                8 Days of John Bryce home improvement just for you
+              </h2>
+              <div class="section-description featured__description">
+                <p>
+                  Tellus integer feugiat scelerisque varius sit amet volutpat
+                  consequat mauris nunc congue nisi at ultrices mi tempus
+                  imperdiet nulla malesuada pellentesque netus et malesuada
+                </p>
+              </div>
+            </div>
+            <div class="featured__img-container">
+              <img
+                src="./images/sections/featured/fetured-img.jpg"
+                width="591"
+                height="787"
+                loading="lazy"
+                alt="fetired section image"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="latest">
+        <div class="container">
+          <div class="latest__wrapper">
+            <header class="latest__header">
+              <div class="title-shape title-shape__left title-shape--circle">
+                latest posts
+              </div>
+              <a class="btn view-all-btn latest__btn" href="/">view all</a>
+            </header>
+            <div class="latest__meta">
+              <div class="latest__filter-categories">
+                <span>Filter By Category:</span>
+                <ul class="tags latest__tags">
+                  <li class="tags__item tags__item--isActive">
+                    <a
+                      class="tags__link"
+                      href="https://github.com/v-makarovskyi"
+                      target="_blank"
+                      >All</a
+                    >
+                  </li>
+                  <li class="tags__item">
+                    <a
+                      class="tags__link"
+                      href="https://github.com/v-makarovskyi"
+                      target="_blank"
+                      >Design</a
+                    >
+                  </li>
+                  <li class="tags__item">
+                    <a
+                      class="tags__link"
+                      href="https://github.com/v-makarovskyi"
+                      target="_blank"
+                      >Altyn</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="select-wrapper latest__select">
+                <label for="latest__filter-show">first show:</label>
+                <select
+                  name="latest__filter-show"
+                  id="latest__filter-show"
+                  autocomplete="off"
+                >
+                  <option value="all" selected>All</option>
+                  <option value="design">Design</option>
+                  <option value="altyn">Altyn</option>
+                </select>
+                <div class="select-wrapper__arrow"></div>
+              </div>
+            </div>
+            <div class="latest__cards">
+              <article class="card card--big card--one latest__card">
+                <div class="card__wrapper">
+                  <div class="card__img-container">
+                    <img
+                      src="./images/sections/latest/1.jpg"
+                      alt="latest-one"
+                      width="847"
+                      height="693"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="meta-data card__meta-data latest__meta-data">
+                    <p class="meta-data__date">
+                      <time datetime="2026-10-24">okt 24, 2026</time>
+                    </p>
+                    <ul class="tags card__tags latest__tags">
+                      <li class="tags__item">
+                        <a
+                          class="tags__link"
+                          href="https://github.com/v-makarovskyi"
+                          target="_blank"
+                          >Altyn</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <h2 class="card__title latest__title">
+                    Home of the big home kit skill of mix ups in tim
+                  </h2>
+                </div>
+              </article>
+
+              <article class="card card--big card--two latest__card">
+                <div class="card__wrapper">
+                  <div class="card__img-container">
+                    <img
+                      src="./images/sections/latest/2.jpg"
+                      alt="latest-one"
+                      width="847"
+                      height="842"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="meta-data card__meta-data latest__meta-data">
+                    <p class="meta-data__date">
+                      <time datetime="2027-03-13">mar 13, 2027</time>
+                    </p>
+                    <ul class="tags card__tags latest__tags">
+                      <li class="tags__item">
+                        <a
+                          class="tags__link"
+                          href="https://github.com/v-makarovskyi"
+                          target="_blank"
+                          >Design</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <h2 class="card__title latest__title">
+                    try out our best in the spot tops and tricks in
+                  </h2>
+                </div>
+              </article>
+
+              <article class="card card--three latest__card">
+                <div class="card__wrapper">
+                  <div class="card__img-container">
+                    <img
+                      src="./images/sections/latest/3.jpg"
+                      alt="latest-one"
+                      width="403"
+                      height="235"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="meta-data card__meta-data latest__meta-data">
+                    <p class="meta-data__date">
+                      <time datetime="2027-03-13">mar 13, 2027</time>
+                    </p>
+                    <ul class="tags card__tags latest__tags">
+                      <li class="tags__item">
+                        <a
+                          class="tags__link"
+                          href="https://github.com/v-makarovskyi"
+                          target="_blank"
+                          >Design</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <h3 class="card__title latest__title">
+                    Read Always Falls Buttered Side tip
+                  </h3>
+                </div>
+              </article>
+
+              <article class="card card--four latest__card">
+                <div class="card__wrapper">
+                  <div class="card__img-container">
+                    <img
+                      src="./images/sections/latest/4.jpg"
+                      alt="latest-one"
+                      width="403"
+                      height="253"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="meta-data card__meta-data latest__meta-data">
+                    <p class="meta-data__date">
+                      <time datetime="2026-09-19">sep 19, 2026</time>
+                    </p>
+                    <ul class="tags card__tags latest__tags">
+                      <li class="tags__item">
+                        <a
+                          class="tags__link"
+                          href="https://github.com/v-makarovskyi"
+                          target="_blank"
+                          >Design</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <h3 class="card__title latest__title">
+                    Design that makes our product good
+                  </h3>
+                </div>
+              </article>
+
+              <article class="card card--five latest__card">
+                <div class="card__wrapper">
+                  <div class="card__img-container">
+                    <img
+                      src="./images/sections/latest/5.jpg"
+                      alt="latest-one"
+                      width="403"
+                      height="269"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="meta-data card__meta-data latest__meta-data">
+                    <p class="meta-data__date">
+                      <time datetime="2026-09-19">sep 19, 2026</time>
+                    </p>
+                    <ul class="tags card__tags latest__tags">
+                      <li class="tags__item">
+                        <a
+                          class="tags__link"
+                          href="https://github.com/v-makarovskyi"
+                          target="_blank"
+                          >vision</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <h3 class="card__title latest__title">
+                    Device that takes your product top
+                  </h3>
+                </div>
+              </article>
+
+              <article class="card card--six latest__card">
+                <div class="card__wrapper">
+                  <div class="card__img-container">
+                    <img
+                      src="./images/sections/latest/6.jpg"
+                      alt="latest-one"
+                      width="403"
+                      height="291"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="meta-data card__meta-data latest__meta-data">
+                    <p class="meta-data__date">
+                      <time datetime="2026-09-19">sep 19, 2026</time>
+                    </p>
+                    <ul class="tags card__tags latest__tags">
+                      <li class="tags__item">
+                        <a
+                          class="tags__link"
+                          href="https://github.com/v-makarovskyi"
+                          target="_blank"
+                          >vision</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <h3 class="card__title latest__title">
+                    The opus of Tim Roth’s somber life
+                  </h3>
+                </div>
+              </article>
+
+              <article class="card card--seven latest__card">
+                <div class="card__wrapper">
+                  <div class="card__img-container">
+                    <img
+                      src="./images/sections/latest/7.jpg"
+                      alt="latest-one"
+                      width="403"
+                      height="381"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="meta-data card__meta-data latest__meta-data">
+                    <p class="meta-data__date">
+                      <time datetime="2026-09-19">sep 19, 2026</time>
+                    </p>
+                    <ul class="tags card__tags latest__tags">
+                      <li class="tags__item">
+                        <a
+                          class="tags__link"
+                          href="https://github.com/v-makarovskyi"
+                          target="_blank"
+                          >vision</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <h3 class="card__title latest__title">
+                    The best Blog out there today now
+                  </h3>
+                </div>
+              </article>
+
+              <article class="card card--eight latest__card">
+                <div class="card__wrapper">
+                  <div class="card__img-container">
+                    <img
+                      src="./images/sections/latest/8.jpg"
+                      alt="latest-one"
+                      width="403"
+                      height="542"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="meta-data card__meta-data latest__meta-data">
+                    <p class="meta-data__date">
+                      <time datetime="2026-09-19">sep 19, 2026</time>
+                    </p>
+                    <ul class="tags card__tags latest__tags">
+                      <li class="tags__item">
+                        <a
+                          class="tags__link"
+                          href="https://github.com/v-makarovskyi"
+                          target="_blank"
+                          >vision</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <h3 class="card__title latest__title">
+                    Forever is longer than today is
+                  </h3>
+                </div>
+              </article>
+
+              <article class="card card--nine latest__card">
+                <div class="card__wrapper">
+                  <div class="card__img-container">
+                    <img
+                      src="./images/sections/latest/9.jpg"
+                      alt="latest-one"
+                      width="403"
+                      height="409"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="meta-data card__meta-data latest__meta-data">
+                    <p class="meta-data__date">
+                      <time datetime="2026-09-19">sep 19, 2026</time>
+                    </p>
+                    <ul class="tags card__tags latest__tags">
+                      <li class="tags__item">
+                        <a
+                          class="tags__link"
+                          href="https://github.com/v-makarovskyi"
+                          target="_blank"
+                          >vision</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <h3 class="card__title latest__title">
+                    The pretty book of the lapua top
+                  </h3>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="popular">
+        <div class="container">
+          <div class="popular__wrapper">
+            <header class="popular__header">
+              <div
+                class="title-shape title-shape__left title-shape--polygon popular__title"
+              >
+                popular
+              </div>
+              <div
+                class="title-shape title-shape__left title-shape--star popular__title"
+              >
+                trending
+              </div>
+            </header>
+            <div class="popular__content">
+              <article class="card card--big popular__card">
+                <div class="card__wrapper">
+                  <div class="card__img-container">
+                    <img
+                      src="./images/sections/popular/1.jpg"
+                      alt="latest-one"
+                      width="630"
+                      height="469"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="meta-data card__meta-data popular__meta-data">
+                    <p class="meta-data__date">
+                      <time datetime="2026-10-24">okt 24, 2026</time>
+                    </p>
+                    <ul class="tags card__tags popular__tags">
+                      <li class="tags__item">
+                        <a
+                          class="tags__link"
+                          href="https://github.com/v-makarovskyi"
+                          target="_blank"
+                          >Altyn</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <h2 class="card__title popular__title">
+                    A box with a new sheen of cool top
+                  </h2>
+                </div>
+              </article>
+
+              <article class="card card--big popular__card">
+                <div class="card__wrapper">
+                  <div class="card__img-container">
+                    <img
+                      src="./images/sections/popular/2.jpg"
+                      alt="latest-one"
+                      width="630"
+                      height="469"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="meta-data card__meta-data popular__meta-data">
+                    <p class="meta-data__date">
+                      <time datetime="2026-10-24">okt 24, 2026</time>
+                    </p>
+                    <ul class="tags card__tags popular__tags">
+                      <li class="tags__item">
+                        <a
+                          class="tags__link"
+                          href="https://github.com/v-makarovskyi"
+                          target="_blank"
+                          >Altyn</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <h2 class="card__title popular__title">
+                    The greatest book read by our dads
+                  </h2>
+                </div>
+              </article>
+
+              <aside class="popular__sidebar">
+                <div class="popular__sidebar-item">
+                  <span class="tags__item popular__tag">source</span>
+                  <p>Old shirts to get used to</p>
+                </div>
+                <div class="popular__sidebar-item">
+                  <span class="tags__item popular__tag">source</span>
+                  <p>The House is open to you now</p>
+                </div>
+                <div class="popular__sidebar-item">
+                  <span class="tags__item popular__tag">source</span>
+                  <p>Red dress will be here for you</p>
+                </div>
+                <div class="popular__sidebar-item">
+                  <span class="tags__item popular__tag">source</span>
+                  <p>For time is here move it now</p>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="interview">
+          <div class="interview__wrapper">
+            <div class="meta-data interview__meta-data">
+              <p class="meta-data__date">
+                <time datetime="2026-09-24">24 sep, 2026</time>
+              </p>
+              <ul class="tags interview__tags">
+                <li class="tags__item">
+                  <a
+                    class="tags__link"
+                    href="https://github.com/v-makarovskyi"
+                    target="_blank"
+                    >abacus</a
+                  >
+                </li>
+                <li class="tags__item">
+                  <a
+                    class="tags__link"
+                    href="https://github.com/v-makarovskyi"
+                    target="_blank"
+                    >golden</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <h2 class="section-title interview__title">
+              Jenny Slate Interview
+            </h2>
+
+            <div class="section-description interview__description">
+              <p>
+                Tellus integer feugiat scelerisque varius. Sit amet volutpat
+                consequat mauris nunc congue nisi. At ultrices mi tempus
+                imperdiet nulla malesuada pellentesque. Netus et malesuada fames
+                ac turpis egestas sed.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer"></footer>
+    <script src="./scripts/all.min.js"></script>
+  </body>
+</html>

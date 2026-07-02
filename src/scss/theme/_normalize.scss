@@ -1,0 +1,40 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    scrollbar-gutter: stable;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100%;
+    line-height: 1.5;
+}
+
+:where(ul, ol):where([class]) {
+    padding-left: 0;
+    list-style: none;
+}
+
+img, video, picture, canvas {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+input, textarea, select, button {
+    font: inherit;
+}
+
+button, label {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}

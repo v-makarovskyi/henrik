@@ -1,0 +1,19 @@
+@use "sass:map";
+@use "../utils" as *;
+
+:root {
+  --container-width: calc(
+    #{map.get($geometry-data-henrik, "container-width")} + var(--container-px) *
+      2
+  );
+  --container-px: #{map.get($geometry-data-henrik, "container-px")};
+
+  @each $name, $color-map in $colors-henrik {
+    @each $key, $val in $color-map {
+      --color-#{$name}-#{$key}: #{$val};
+    }
+  }
+
+  --border-main: thin solid #{map.get(map.get($colors-henrik, "border"), "main")};
+  --font-main: #{$font-main};
+}

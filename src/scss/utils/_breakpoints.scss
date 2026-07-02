@@ -1,0 +1,30 @@
+@use "sass:map" as m;
+
+$bp_grid: (
+  xs: 0,
+  sm: 576px,
+  md: 767px,
+  lg: 991px,
+  xl: 1199px,
+  xxl: 1399px,
+);
+
+@function get_min($name, $breakpoints: $bp_grid) {
+  $min: m.get($breakpoints, $name);
+  @if $min != 0 {
+    @return $min;
+  } @else {
+    @return null;
+  }
+}
+
+@mixin up($name, $breakpoints: $bp_grid) {
+  $min: get_min($name, $breakpoints);
+  @if $min {
+    @media screen and (width > $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}

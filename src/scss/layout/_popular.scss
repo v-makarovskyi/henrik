@@ -1,0 +1,135 @@
+@use "sass:list";
+@use "sass:map";
+@use "../utils" as *;
+
+.popular {
+  
+  $popular-section-margin-bottom: 30px, 45px, 65px, 85px, 100px, 120px;
+
+  @include set-prop-value-different-bp(margin-bottom, $list-values: $popular-section-margin-bottom);
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @include up(sm) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, minmax(30px, auto));
+    }
+
+    @include up(lg) {
+      grid-template-columns: repeat(2, 36.35%) 16.1%;
+      grid-template-rows: repeat(2, minmax(30px, auto));
+      column-gap: 20px;
+    }
+
+    @include up(xl) {
+      column-gap: 28px;
+    }
+
+    @include up(xxl) {
+      column-gap: 37px;
+    }
+  }
+
+  &__header {
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include up(sm) {
+      grid-column: 1/-1;
+    }
+
+    @include up(lg) {
+      display: contents;
+      & > * {
+        margin-bottom: 10px;
+      }
+      & > :first-child {
+        grid-column: 1 / span 2;
+        justify-self: start;
+      }
+      & > :last-child {
+        grid-column: 3;
+        justify-self: start;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-flow: column nowrap;
+    row-gap: 28px;
+
+    @include up(sm) {
+      display: grid;
+      grid-template-columns: subgrid;
+      grid-column: 1 / -1;
+      grid-row: 2/4;
+      column-gap: 30px;
+    }
+
+    @include up(lg) {
+      display: contents;
+    }
+  }
+
+  &__sidebar {
+    padding: 18px;
+    width: 70%;
+    align-self: center;
+    box-shadow: 0px 2px 8px -1px hsla(0, 0%, 0%, 0.3);
+    border-radius: 5px;
+
+    @include up(sm) {
+      width: max-content;
+      grid-column: 1/-1;
+      place-self: start center;
+    }
+
+    @include up(lg) {
+      grid-column: 3;
+      width: auto;
+      box-shadow: none;
+      padding: 0;
+    }
+
+    &-item {
+      & > :first-child {
+        color: hsl(0 100% 50%);
+        display: inline-block;
+        margin-bottom: 3px;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+      & > p {
+        margin: {
+          left: 20px;
+        }
+        width: max-content;
+        border-bottom: var(--border-main);
+        font-size: 12px;
+        line-height: lh-number(24px, 32px);
+        text-transform: uppercase;
+
+        @include up(md) {
+          font-size: 14px;
+        }
+        @include up(lg) {
+          width: auto;
+          font-size: 16px;
+        }
+        @include up(xl) {
+          font-size: 20px;
+        }
+        @include up(xxl) {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}

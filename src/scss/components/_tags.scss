@@ -1,0 +1,30 @@
+@use "sass:selector";
+@use "../utils" as *;
+
+.tags {
+  margin-left: 11px;
+  display: inline-flex;
+  align-items: center;
+  column-gap: 7px;
+
+  &__item {
+    padding: 4px 7px 5px;
+    font-size: 8px;
+    line-height: 1;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+    border-radius: 55px;
+    border: var(--border-main);
+
+    @include unify-parent(#{selector.append(&, "--isActive")}) {
+      background: {
+        color: var(--color-text-main);
+      }
+      color: var(--color-bg-main);
+    }
+
+    @include up(sm) {
+      font-size: 11px;
+    }
+  }
+}
