@@ -38,15 +38,15 @@
 
   @at-root #{selector.nest(selector.append(&, "__menu"), ".menu__link")} {
     font-size: 11px;
-    line-height: lh-number(15px, 26px);
-    letter-spacing: -0.3px;
-
     @include up(md) {
       font-size: 15px;
     }
   }
 
   &__social {
+    margin: {
+      bottom: 11px;
+    }
     $social-icons: (
       facebook: "../../images/icons/fb.svg",
       instagram: "../../images/icons/insta.svg",
@@ -68,6 +68,35 @@
           }
         }
       }
+    }
+  }
+
+  &__extra {
+    padding: {
+      top: 20px;
+      bottom: 30px;
+    }
+    @include up(lg) {
+      padding: {
+        top: 32px;
+        bottom: 48px;
+      }
+    }
+    font-size: 11px;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+
+    & > span:first-of-type {
+      display: inline-block;
+      color: hsl(0 0% 50%);
+      &::before {
+        content: "\00A9";
+      }
+    }
+
+    & > span:last-of-type {
+      padding-bottom: 1px;
+      border-bottom: var(--border-main);
     }
   }
 }
